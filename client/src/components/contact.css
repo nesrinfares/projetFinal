@@ -1,0 +1,128 @@
+
+.tit-contact h3{
+   
+    color: rgb(17, 17, 17);
+    font-size: 20px;
+     font-weight: bold;
+     
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    margin-left:588px;
+    margin-top: -75;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+input {
+    overflow: visible;  }
+
+.contact {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.contact__address ul li {
+    list-style: none;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.contact__form form input {
+    height: 50px;
+    width: 60%;
+    padding-left: 20px;
+    font-size: 14px;
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 25px;
+    margin-bottom: 20px;
+    margin-left: 110px;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 0px;
+    margin-left:0px;
+}
+
+.contact__address {
+    margin: 56px;
+    margin-right: 872px;
+    margin-left: -187px;
+}
+.contact__address ul li h6{
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 16px;
+    margin-left: -44px;
+}
+.contact__address ul li h6 svg {
+    font-size: 20px;
+    color: #fc48ab!important;
+    margin-right: 12px;
+    margin-left: -163px;
+  
+}
+.fa-fa-map-marker{  font-size: 18px;
+    background-color: #fc48ab!important;}
+
+
+
+    
+    .contact__form h5 {
+        color: rgb(17, 17, 17);
+        font-size: 20px;
+        font-weight: bold;
+     
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        margin-left:530px;
+    }
+    form {
+        display:flex;
+        flex-wrap: wrap;
+        width: 870px;
+        margin-left: 410px;
+        margin-right: 0px;
+        margin-top: 0em;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    
+
+    .site-btn {
+
+        font-size: 14px;
+        color: #ffffff;
+        background: #fc48ab;
+        font-weight: 600;
+        border: none;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 50px;
+        width:250px;
+        margin-left: -345px;
+       
+    }
+    
+
+
+
+   .contact__map{
+     margin-left: 704px;
+   margin-top: -688px;
+   margin-bottom: 282px;
+}

@@ -1,0 +1,156 @@
+/*carousel home */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.pic-ctn {
+  width: 1180px;
+  height: 200px;
+}
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+.pic-ctn {
+  position:relative;
+  width: 1180px;
+  height: 400px;
+  margin-top: 20px;
+  margin-left: -452px;
+  margin-right: 0px;
+}
+
+
+.pic-ctn > img {
+  margin-left: 0px !important;
+  width: 1180px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 100px);
+  opacity: 0;
+  animation: display 15s infinite;
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+}
+
+
+
+/*OUR PRODUCT*/
+ 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white ;
+ 
+}
+/* product */
+.title-box{
+  text-align: center;
+  padding: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  box-shadow: 5px;
+}
+.main-box {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+ margin: 20px !important;
+
+
+}
+.titlee{
+text-align: center;
+padding: 20px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  box-shadow: 5px;
+}
+.new {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  box-shadow: 5px;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+
+
+
+/* brands */
+.carousel-containerrr {
+  width: 100% !important;
+  overflow: hidden;
+  height: 70% !important;
+}
+
+.carousel-slider1{
+  background-color: white;
+  display: flex !important;
+  justify-content: space-around !important;
+  justify-items: center !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  height: 70% !important;
+  animation: slide-animation 50s infinite;
+}
+
+.carousel-slidee{
+ 
+  width: 250px !important;
+  height: 180px !important;
+  
+  
+
+  
+}
+
+@keyframes slide-animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+

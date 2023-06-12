@@ -1,0 +1,93 @@
+.menu{
+	display: flex;
+	justify-content: space-around;
+	justify-items: center;
+}
+.categories__accordion .card-body {
+    padding-left: 0;
+    padding-top: 6px;
+    padding-bottom: 0;
+}
+.categorie{
+    margin-right: 20px !important;
+    margin-left: 10px !important;
+    width: 25%;
+    height: 450px;
+    padding: 55px;
+}
+.categorie h3{
+    font-style: italic;
+    color: #111111;
+	font-weight: 600;
+	text-transform: uppercase;
+	position: relative;
+	display: inline-block;
+}
+.categorie h3:after{
+    position: absolute;
+	left: 0;
+	bottom: -4px;
+	height: 2px;
+	width: 70px;
+	background: #ca1515;
+	content: "";
+}
+.photo{
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+
+
+.filtersize h4{
+    margin-top: 40px;
+    font-style: italic;
+    color: #111111;
+	font-weight: 600;
+	text-transform: uppercase;
+	position: relative;
+	display: inline-block;
+}
+.filtersize h4:after{
+    position: absolute;
+	left: 0;
+	bottom: -4px;
+	height: 2px;
+	width: 70px;
+	background: #ca1515;
+	content: "";
+}
+.filtersize ul{
+    margin-top: 22px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+.filtersize .size{
+    margin-top: 0px;
+   margin-bottom: 40px;
+
+
+}
+.filtersize .size label{
+    display: block;
+	padding-left: 20px;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #000000;
+	position: relative;
+	cursor: pointer;
+    margin-bottom: 0px;
+}
+.filtersize .size label input{
+    margin-left: 5px;
+}
+.filtersize .size label input:checked.checkmark{
+ border-color: #ca1515;
+}
+
+.vetement{
+    margin-top: 35px;
+    margin-bottom: 30px;
+    display: block;
+}
