@@ -1,12 +1,13 @@
 nav {
-	display: flex;
+	
+	display: flex !important;
 	justify-content: space-around;
 	margin:  auto 0;
      font-family: cursive;
 	 font-style: italic;
 	 font-weight: bold;
 	position: fixed;
-	width:100% !important;
+	width: 65px!important;
 	height: 50px;
 	background-color: white;
 	border-radius: 8px;
@@ -43,16 +44,17 @@ nav a{
 	font-family: sans-serif;
 	background: white;
     display: flex;
+	margin-top: 10px;
     justify-content: space-around;
 }
 
 .icons{
     display: flex !important;
-    margin-right: 18px;
+    margin-right: -355px;
     justify-content: space-around !important;
     width: 7% !important;
     height: 40px !important;
-    margin-top: 38px !important;
+    margin-top: 14px !important;
     size: 3px !important;
 }
 .symbol{
@@ -66,7 +68,8 @@ nav a{
     width: 81px;
     position: absolute;
     top: 14px;
-    left: 1;
+    left: 14px;
+	margin-top: -6px;
 }
 .icons svg{
     width: 25px;
@@ -87,4 +90,3 @@ nav a{
 	z-index: 9999999999999;
   
   }
-

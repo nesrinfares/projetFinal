@@ -28,9 +28,9 @@ export const deleteproduct = createAsyncThunk("produit/delete", async (id) => {
   }
 });
 
-export const editproduct = createAsyncThunk("product/edit", async ({ id, edit }) => {
+export const editproduct = createAsyncThunk("product/edit", async ({ id, edited }) => {
   try {
-    let result = axios.put(`http://localhost:5000/produit/${id}`, edit);
+    let result = axios.put(`http://localhost:5000/produit/${id}`, edited);
     return result;
   } catch (error) {
     console.log(error);
