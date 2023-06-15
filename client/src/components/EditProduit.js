@@ -1,61 +1,47 @@
-import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
-import { editproduct } from '../JS/productslice';
-function EditProduit({el}) {
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-  const [etited, setetited] = useState({
-   name:{el.name}, 
-   image:{el.image}, 
-   catégori:{el.catégori} 
-  })
-    return (
+import React from "react";
+import "./editproduct.css";
+function EditProduit() {
+  return (
+    <div>
       <div>
-        <Button variant="primary" onClick={handleShow}>
-     Edit
-        </Button>
-  
-        <Modal show={show} onHide={handleClose} animation={false}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-          <Form>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Name</Form.Label>
-        <Form.Control type="email" placeholder= {el.name}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Image</Form.Label>
-        <Form.Control type="email" placeholder= {el.image}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Catégori</Form.Label>
-        <Form.Control type="email" placeholder= {el.catégori}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Example textarea</Form.Label>
-        <Form.Control as="textarea" rows={3} />
-      </Form.Group>
-    </Form>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={()=>{dispatch(editproduct({id:el.id, edited}))}}
-             >
-           Edit
-            </Button>
-          </Modal.Footer>
-        </Modal>
-
+        <details>
+          <summary>
+            <div className="button1">Show me the modal</div>
+            <div className="details-modal-overlay" />
+          </summary>
+          <div className="details-modal">
+            <div className="details-modal-close">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={14}
+                height={14}
+                viewBox="0 0 14 14"
+                fill="none"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+            <div className="details-modal-title">
+              <h1>My details modal</h1>
+            </div>
+            <div className="details-modal-content">
+              <p>
+                You can click the X in the corner or click the overlay to close
+                this modal. Something like this could be useful as a nice way to
+                show additional information, but that's about as far as I would
+                take it. It's just a nice way of styling the details element.
+              </p>
+            </div>
+          </div>
+        </details>
+      </div>
     </div>
-  )
+  );
 }
 
-export default EditProduit
+export default EditProduit;

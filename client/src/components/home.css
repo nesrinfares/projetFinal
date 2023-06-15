@@ -132,7 +132,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   flex-wrap: wrap !important;
   width: 100% !important;
   height: 70% !important;
-  animation: slide-animation 50s infinite;
+  animation: slide-animation 10s infinite;
 }
 
 .carousel-slidee{

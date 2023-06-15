@@ -5,10 +5,10 @@ import "./App.css";
 import Logi from "./components/Logi";
 import Profil from "./components/Profil";
 import Register from "./components/Register";
-import { userCurrent } from "./JS/userSlice/userSlice";
+import { getuser, userCurrent } from "./JS/userSlice/userSlice";
 import PrivateRoute from "./Routes/PrivateRouter";
 
-import { getproduct } from "./JS/productslice";
+import { getproduit } from "./JS/productslice";
 import { getcommande } from "./JS/commandeslice";
 import Navbarre from "./components/Navbarre";
 import Home from "./components/Home";
@@ -25,48 +25,46 @@ import Contact from "./components/Contact";
 import Dashborde from "./components/Dashborde";
 import Footer from "./components/Footer";
 import ListProduct from "./components/ListProduct";
+import Dashb from "./components/Dashb";
 
 function App() {
   const isAuth = localStorage.getItem("token");
   const dispatch = useDispatch();
   useEffect(() => {
-    if (isAuth) {
-      dispatch(userCurrent());
-    }
-
-    dispatch(getproduct());
+    dispatch(userCurrent());
+    dispatch(getproduit());
     dispatch(getcommande());
-  
-  });
-
+    dispatch(getuser());
+  }, []);
+  const produits = useSelector((state) => state.produit?.produitList);
   return (
     <div className="App">
       <Navbarre />
 
       <Routes>
+        <Route path="/dashb" element={<Dashb />} />
         <Route path="/" element={<Home />} />
         <Route exact path="/register" element={<Register />} />
         <Route path="/login" element={<Logi />} />
         <Route element={<PrivateRoute />}>
-          <Route path="/profil" element={<Profil />} />
+          <Route path="/profile" element={<Profil />} />
         </Route>{" "}
         <Route path="/panier" element={<Panier />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/dashborde" element={<Dashborde />} />
         <Route path="/Promo" element={<Promo />} />
         <Route path="/Vetements" element={<Vetements />} />
         <Route path="/cuisine" element={<Cuisine />} />
         <Route path="/electronique" element={<Electronique />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path='/dashborde/prodlist' element={<ListProduct />} />
+        <Route path="/dashborde" element={<ListProduct />} />
         <Route
           path="/detailler/:id"
-          // element={<Detailler produits={produits} />}
+          element={<Detailler produits={produits} />}
         />
       </Routes>
 
-      {/* <Footer/>   */}
+      {/* <Footer /> */}
     </div>
   );
 }

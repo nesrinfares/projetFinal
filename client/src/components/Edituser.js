@@ -1,25 +1,21 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
-import "./profil.css";
-import { edituser } from "../JS/userSlice/userSlice";
-function Profil() {
-  const user = useSelector((state) => state.user?.user);
-  console.log(user)
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [Editprofil, setEditprofil] = useState({
-    name:user?.name,
-    lastName:user?.lastName,
-    email:user?.email,
-    Telephone:user?.Telephone,
-    adresse:user?.adresse,
-  })
-
+function Edituser() {
+    const user = useSelector((state) => state.user?.user);
+    console.log(user);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [Editprofil, setEditprofil] = useState({
+      name:user?.name,
+      lastName:user?.lastName,
+      email:user?.email,
+      Telephone:user?.Telephone,
+      adresse:user?.adresse,
+    })
   return (
     <div>
-      <div style={{ marginTop: 150 }}>
+            <div style={{ marginTop: 150 }}>
         <div className="row" style={{ width: 1148, marginLeft: 48 }}>
           <div className="col-md-12">
             <ol className="breadcrumb">
@@ -93,8 +89,7 @@ function Profil() {
                             type="text"
                             class="form-control"
                           
-                            placeholder={user?.name}
-                            onChange={(e)=>setEditprofil({...Editprofil,name:e.target.value})}
+                            placeholder={user?.name} onChange={(e)=>setEditprofil({...Editprofil,name:e.target.value})}
                           />
                         </div>
                       </div>
@@ -109,8 +104,7 @@ function Profil() {
                           <input
                             type="text"
                             class="form-control"
-                            placeholder={user?.lastname}
-                            onChange={(e)=>setEditprofil({...Editprofil,lastName:e.target.value})}
+                            placeholder={user?.lastName} onChange={(e)=>setEditprofil({...Editprofil,lastName:e.target.value})}
                           />
                         </div>
                       </div>
@@ -125,7 +119,7 @@ function Profil() {
                           <input
                             type="text"
                             class="form-control"
-                            value="text"
+                            placeholder={user?.email} onChange={(e)=>setEditprofil({...Editprofil,email:e.target.value})}
                           />
                         </div>
                       </div>
@@ -140,7 +134,7 @@ function Profil() {
                           <input
                             type="text"
                             class="form-control"
-                            value="text"
+                            placeholder={user?.Num} onChange={(e)=>setEditprofil({...Editprofil,Telephone:e.target.value})}
                           />
                         </div>
                       </div>
@@ -156,14 +150,15 @@ function Profil() {
                           <input
                             type="text"
                             class="form-control"
-                            value="text"
+                            placeholder={user?.adresse} onChange={(e)=>setEditprofil({...Editprofil,adresse:e.target.value})}
                           />
                         </div>
                       </div>
                       <hr />
                       <div className="row">
                         <div className="col-sm-12">
-                          <button onClick={()=>dispatch(edituser({id:user?._id,edited:Editprofil}))}>Update</button>
+                          {/* <button variant="primary" 
+                          onChange={()=> {dispatch(editUser(user._id,{user?.name},{user.lastName},{user.email},{user.imageUrl},isAdmin,{user.phone}}))}}> Enregistrer </button> */} 
                           
                         </div>
                       </div>
@@ -180,7 +175,9 @@ function Profil() {
         {/*Reservation List */}
       </div>
     </div>
-  );
+
+   
+  )
 }
 
-export default Profil;
+export default Edituser

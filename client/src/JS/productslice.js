@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getproduct = createAsyncThunk("product/get", async (req, res) => {
+export const getproduit = createAsyncThunk("produit/get", async (req, res) => {
   try {
     let result = axios.get("http://localhost:5000/produit/");
     return result;
@@ -10,16 +10,19 @@ export const getproduct = createAsyncThunk("product/get", async (req, res) => {
   }
 });
 
-export const addproduct = createAsyncThunk("product/add", async (newproduct) => {
-  try {
-    let result = axios.post("http://localhost:5000/produit/add", newproduct);
-    return result;
-  } catch (error) {
-    console.log(error);
+export const addproduit = createAsyncThunk(
+  "produit/add",
+  async (newproduit) => {
+    try {
+      let result = axios.post("http://localhost:5000/produit/add", newproduit);
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
   }
-});
+);
 
-export const deleteproduct = createAsyncThunk("produit/delete", async (id) => {
+export const deleteproduit = createAsyncThunk("produit/delete", async (id) => {
   try {
     let result = axios.delete(`http://localhost:5000/produit/${id}`);
     return result;
@@ -28,60 +31,63 @@ export const deleteproduct = createAsyncThunk("produit/delete", async (id) => {
   }
 });
 
-export const editproduct = createAsyncThunk("product/edit", async ({ id, edited }) => {
-  try {
-    let result = axios.put(`http://localhost:5000/produit/${id}`, edited);
-    return result;
-  } catch (error) {
-    console.log(error);
+export const editproduit = createAsyncThunk(
+  "produit/edit",
+  async ({ id, edited }) => {
+    try {
+      let result = axios.put(`http://localhost:5000/produit/${id}`, edited);
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
   }
-});
+);
 
 const initialState = {
-  productList: null,
+  produitList: null,
   status: null,
 };
 
-export const productSlice = createSlice({
-  name: "product",
+export const produitSlice = createSlice({
+  name: "produit",
   initialState,
   reducers: {},
   extraReducers: {
-    [getproduct.pending]: (state) => {
+    [getproduit.pending]: (state) => {
       state.status = "pending";
     },
-    [getproduct.fulfilled]: (state, action) => {
+    [getproduit.fulfilled]: (state, action) => {
       state.status = "success";
-      state.productList = action.payload.data.produits;
+      state.produitList = action.payload.data.produits;
     },
-    [getproduct.rejected]: (state) => {
+    [getproduit.rejected]: (state) => {
       state.status = "fail";
     },
-    [addproduct.pending]: (state) => {
+    [addproduit.pending]: (state) => {
       state.status = "pending";
     },
-    [addproduct.fulfilled]: (state, action) => {
+    [addproduit.fulfilled]: (state, action) => {
       state.status = "success";
     },
-    [addproduct.rejected]: (state) => {
+    [addproduit.rejected]: (state) => {
       state.status = "fail";
     },
-    [deleteproduct.pending]: (state) => {
+    [deleteproduit.pending]: (state) => {
       state.status = "pending";
     },
-    [deleteproduct.fulfilled]: (state, action) => {
+    [deleteproduit.fulfilled]: (state, action) => {
       state.status = "success";
     },
-    [deleteproduct.rejected]: (state) => {
+    [deleteproduit.rejected]: (state) => {
       state.status = "fail";
     },
-    [editproduct.pending]: (state) => {
+    [editproduit.pending]: (state) => {
       state.status = "pending";
     },
-    [editproduct.fulfilled]: (state, action) => {
+    [editproduit.fulfilled]: (state, action) => {
       state.status = "success";
     },
-    [editproduct.rejected]: (state) => {
+    [editproduit.rejected]: (state) => {
       state.status = "fail";
     },
   },
@@ -90,4 +96,4 @@ export const productSlice = createSlice({
 // Action creators are generated for each case reducer function
 //export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 
-export default productSlice.reducer;
+export default produitSlice.reducer;

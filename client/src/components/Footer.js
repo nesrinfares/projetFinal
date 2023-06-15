@@ -10,7 +10,7 @@ function Footer() {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
   <footer id="dk-footer" className="dk-footer" style={{backgroundColor:" #bbb6b6", color:"black",padding:"95px 0 0 "}}>
     <div className="container">
-      <div className="row">
+      <div className="row" style={{backgroundColor:"#878787",color:"black"}}>
       
         <div className="col-md-12 col-lg-4">
           <div className="dk-footer-box-info" style={{marginTop: "37px",backgroundColor:"#bbb6b6", color:"black", height:"265px"}}>

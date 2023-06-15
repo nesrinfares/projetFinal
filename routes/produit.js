@@ -28,7 +28,7 @@ produitRouter.get("/", async (req, res) => {
 produitRouter.get("/:id", async (req, res) => {
   try {
     let result = await Produit.findById(req.params.id);
-    res.send({ Produit: result, msg: "one produit" });
+    res.send({ produit: result, msg: "one produit" });
   } catch (error) {
     console.log(error);
   }
