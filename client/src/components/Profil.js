@@ -6,16 +6,16 @@ import "./profil.css";
 import { edituser } from "../JS/userSlice/userSlice";
 function Profil() {
   const user = useSelector((state) => state.user?.user);
-  console.log(user)
+  console.log(user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [Editprofil, setEditprofil] = useState({
-    name:user?.name,
-    lastName:user?.lastName,
-    email:user?.email,
-    Telephone:user?.Telephone,
-    adresse:user?.adresse,
-  })
+    name: user?.name,
+    lastName: user?.lastName,
+    email: user?.email,
+    Telephone: user?.Telephone,
+    adresse: user?.adresse,
+  });
 
   return (
     <div>
@@ -92,9 +92,13 @@ function Profil() {
                           <input
                             type="text"
                             class="form-control"
-                          
                             placeholder={user?.name}
-                            onChange={(e)=>setEditprofil({...Editprofil,name:e.target.value})}
+                            onChange={(e) =>
+                              setEditprofil({
+                                ...Editprofil,
+                                name: e.target.value,
+                              })
+                            }
                           />
                         </div>
                       </div>
@@ -110,7 +114,12 @@ function Profil() {
                             type="text"
                             class="form-control"
                             placeholder={user?.lastname}
-                            onChange={(e)=>setEditprofil({...Editprofil,lastName:e.target.value})}
+                            onChange={(e) =>
+                              setEditprofil({
+                                ...Editprofil,
+                                lastName: e.target.value,
+                              })
+                            }
                           />
                         </div>
                       </div>
@@ -163,8 +172,15 @@ function Profil() {
                       <hr />
                       <div className="row">
                         <div className="col-sm-12">
-                          <button onClick={()=>dispatch(edituser({id:user?._id,edited:Editprofil}))}>Update</button>
-                          
+                          <button
+                            onClick={() =>
+                              dispatch(
+                                edituser({ id: user?._id, edited: Editprofil })
+                              )
+                            }
+                          >
+                            Update
+                          </button>
                         </div>
                       </div>
                     </div>
